@@ -52,4 +52,4 @@ The model is in the pickle file named "my_preds.pickle" : you can generate it ag
 The notebook also attests of all the models that I have tested in this project.
 
 ### Conclusion
-In our case, Stochastic Gradient Boosting seemed to be the best model, with an accuracy of 96.8%, but a little bit better than the other ones. When we tried to test the models several times, there were some attempts where the Bagging model gave a better accuracy: the results are really close.
+In our case, Stochastic Gradient Boosting seemed to be the best model, with an accuracy of 96.8%, but a little bit better than the other ones. When I tried to test the models several times, there were some attempts where the Bagging model gave a better accuracy: the results are really close.
