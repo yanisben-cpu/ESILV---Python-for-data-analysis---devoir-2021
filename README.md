@@ -16,7 +16,7 @@ You must have the following libraries installed:
 
 ### Project Structure
 This project has 5 major parts :
-1. Proj python Yanis Benabdesslam.ipynb - This contains code fot our Machine Learning model to predict employee salaries absed on trainign data in 'hiring.csv' file.
+1. Proj python Yanis Benabdesslam.ipynb - This contains our data visualizations and the tested Machine Learning models to predict people's obesity types based on our csv file.
 2. app_test.py - This contains Flask APIs that receives someones's physical features (Gender, height, etc.), computes the precited value based on our model and returns it.
 3. request.py - This uses requests module to call APIs already defined in app.py and dispalys the returned value.
 4. app.py - This also contains a Flask API that computes the precited value based on our model and returns it in an explorer.
