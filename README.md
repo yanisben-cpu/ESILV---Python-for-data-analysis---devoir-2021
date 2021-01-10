@@ -22,6 +22,12 @@ This project has 5 major parts :
 4. app.py - This also contains a Flask API that computes the precited value based on our model and returns it in an explorer.
 5. templates/index.html - This folder contains the HTML page on which the user will enter the values he wants for model's prediction.
 
+### Files location
+- The main folder contains the report of the project in pdf format.
+- The "ObesityDataSet_raw_and_data_sinthetic (2)" folder contains the 2 csv files (raw & converted) and the jupyter notebook file
+- The "pickle files" folder contains the 3 python .py files (for Flask API)and the best model's pickle file.
+- The "templates" folder contains the "index.html" file used to show the API in an internet explorer
+
 ### Running the project
 1. First, open the Jupyter Notebook file and run every row, in order to create the "converted dataset" and the model's pickle file.
 
