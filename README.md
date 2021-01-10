@@ -41,14 +41,14 @@ By default, flask will run on port 5000.
 
 Enter valid numerical values in all 16 input boxes and hit Predict to see the result.
 
-You should be able to see the predcited obesity type on the HTML page!
+You should be able to see the predicted obesity type on the HTML page!
 
-4. You can also send direct POST requests to FLask API using Python's inbuilt request module
-Run the beow command to run the console version off the app, with no html page support
+4. You can also send direct POST requests to FLask API using Python's requests library:
+Run the following command to run the console version off the app (with no html page support)
 ```
 python app_test.py
 ```
-Then run the request.py file and lauch the program to see the result in python console.
+Then run the request.py file and lauch the program to see the result in python console (you can modify the inputs by modifying the data 2D array).
 
 ### Visuals
 All the vizuals can be found in the Jupyter Notebook file called "Proj Python Yanis Benabdesslam.ipynb".
