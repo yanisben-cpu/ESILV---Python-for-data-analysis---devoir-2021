@@ -1,4 +1,4 @@
-# ESILV - Python-for-data-analysis - devoir-2021
+# ESILV - Python-for-data-analysis - 2021
 Python for data analysis project made by Yanis BENABDESSLAM
 
 ## Project's goal
