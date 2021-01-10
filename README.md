@@ -1,2 +1,38 @@
 # ESILV---Python-for-data-analysis---devoir-2021
 Python for data analysis project made by Yanis BENABDESSLAM
+
+## ML-Model-Flask-Deployment
+This is a project which consists in the deployment of a Flask API using a Machine Learning model on an "Obesity level" dataset.
+
+### Prerequisites
+You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for API) installed in order to run everything correctly.
+
+### Project Structure
+This project has four major parts :
+1. Proj python Yanis Benabdesslam.ipynb - This contains code fot our Machine Learning model to predict employee salaries absed on trainign data in 'hiring.csv' file.
+2. app_test.py - This contains Flask APIs that receives someones's physical features (Gender, height, etc.), computes the precited value based on our model and returns it.
+3. request.py - This uses requests module to call APIs already defined in app.py and dispalys the returned value.
+4. app.py - This also contains a Flask API that computes the precited value based on our model and returns it in an explorer.
+4. templates/index.html - This folder contains the HTML page on which the user will enter the values he wants for model's prediction.
+
+### Running the project
+1. First, open the Jupyter Notebook file and run every row, in order to create the "converted dataset" and the model's pickle file.
+
+2. Run app.py using below command to start Flask API
+```
+python app.py
+```
+By default, flask will run on port 5000.
+
+3. Navigate to URL http://localhost:5000 (in general, it will be http://127.0.0.1:5000)
+
+Enter valid numerical values in all 16 input boxes and hit Predict to see the result.
+
+You should be able to see the predcited obesity type on the HTML page!
+
+4. You can also send direct POST requests to FLask API using Python's inbuilt request module
+Run the beow command to run the console version off the app, with no html page support
+```
+python app_test.py
+```
+Then run the request.py file and lauch the program to see the result in python console.
