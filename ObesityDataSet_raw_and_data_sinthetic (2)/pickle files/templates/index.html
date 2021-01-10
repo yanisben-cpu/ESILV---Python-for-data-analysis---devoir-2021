@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <br>
+ <div class="login">
+	<h1>Obesity Analysis (ML)</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+    	<input type="text" name="Gender" placeholder="Gender" required="required" /> &nbsp;&nbsp;
+        <input type="text" name="Age" placeholder="Age" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="Height" placeholder="Height" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="Weight" placeholder="Weight" required="required" /> &nbsp;&nbsp;
+	
+	<br>
+	<br>
+
+	<input type="text" name="FHWO" placeholder="FHWO" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="FAVC" placeholder="FAVC" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="FCVC" placeholder="FCVC" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="NCP" placeholder="NCP" required="required" /> &nbsp;&nbsp;
+
+	<br>
+	<br>
+
+	<input type="text" name="CAEC" placeholder="CAEC" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="SMOKE" placeholder="SMOKE" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="CH2O" placeholder="CH2O" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="SCC" placeholder="SCC" required="required" /> &nbsp;&nbsp;
+
+	<br>
+	<br>
+
+	<input type="text" name="FAF" placeholder="FAF" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="TUE" placeholder="TUE" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="CALC" placeholder="CALC" required="required" /> &nbsp;&nbsp;
+	<input type="text" name="MTRANS" placeholder="MTRANS" required="required" /> &nbsp;&nbsp;
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp Physical state result:</b>
+				<font style="color:red;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> {{ prediction_text }} </b> </font>
+
+ </div>
+
+<br>
+<br>
+<br>
+
+ <div class="login">
+	<h2>How to fill the inputs:</h2>
+
+	<table>
+
+	<tr>
+		<th> Input name </th>
+		<th> Description </th> 
+		<th> Input values </th>
+	</tr>
+   	<tr>
+		<td> <br> - Gender </td>
+		<td> <br> Gender </td>
+		<td> <br> 
+		     <b> 1 </b> : Man
+		     <br>
+		     <b> 2 </b> : Woman
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - Age </td>
+		<td> <br> Age in years </td>
+		<td> <br> Your age (in <b>years</b>) </td>
+	</tr>
+	<tr>
+		<td> <br> - Height </td>
+		<td> <br> Height in meters </td>
+		<td> <br> Your height (in <b>meters</b>) </td>
+	</tr>
+	<tr>
+		<td> <br> - Weight </td>
+		<td> <br> Weight in Kg </td>
+		<td> <br> Your weight (in <b>Kg</b>) </td>
+	</tr>
+	<tr>
+		<td> <br> - FHWO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+		<td> <br> Has a family member suffers from overweight ? </td>
+		<td> <br> 
+		     <b> 0 </b> : no
+		     <br>
+		     <b> 1 </b> : yes
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - FAVC </td>
+		<td> <br> Do you eat high caloric food frequently ? </td>
+		<td> <br> 
+		     <b> 0 </b> : no
+		     <br>
+		     <b> 1 </b> : yes
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - FCVC </td>
+		<td> <br> Do you usually eat vegetables in your meals? </td>
+		<td> <br> 
+		     <b> 1 </b> : Never
+		     <br>
+		     <b> 2 </b> : Sometimes
+		     <br>
+		     <b> 3 </b> : Always
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - NCP </td>
+		<td> <br> How many main meals do you have daily ? </td>
+		<td> <br> 
+		     <b> 1 </b> : 1 or 2
+		     <br>
+		     <b> 2 </b> : 3
+		     <br>
+		     <b> 3 </b> : More than 3
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - CAEC </td>
+		<td> <br> Do you eat any food between meals? </td>
+		<td> <br> 
+		     <b> 0 </b> : no
+		     <br>
+		     <b> 1 </b> : Sometimes
+		     <br>
+		     <b> 2 </b> : Frequently
+                     <br>
+		     <b> 3 </b> : Always
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - SMOKE </td>
+		<td> <br> Do you smoke ? </td>
+		<td> <br> 
+		     <b> 0 </b> : no
+		     <br>
+		     <b> 1 </b> : yes
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - CH2O </td>
+		<td> <br> How much water do you drink daily ? </td>
+		<td> <br> 
+		     <b> 1 </b> : Less than 1L
+		     <br>
+		     <b> 2 </b> : Between 1 and 2L
+                     <br>
+		     <b> 3 </b> : More than 2L
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - SCC </td>
+		<td> <br> Do you monitor the calories you eat daily ? </td>
+		<td> <br> 
+		     <b> 0 </b> : no
+		     <br>
+		     <b> 1 </b> : yes
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - FAF </td>
+		<td> <br> How often do you have physical activity ? (weekly) </td>
+		<td> <br> 
+		     <b> 0 </b> : I don't have
+		     <br>
+		     <b> 1 </b> : 1 or 2 days
+		     <br>
+		     <b> 2 </b> : 2-4 days
+                     <br>
+		     <b> 3 </b> : 4 or 5 days
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - TUE </td>
+		<td> <br> How much time do you spend using technological devices ? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+		<td> <br> 
+		     <b> 0 </b> : 0–2 hours
+		     <br>
+		     <b> 1 </b> : 3–5 hours
+		     <br>
+		     <b> 2 </b> : More than 5 hours
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - CALC </td>
+		<td> <br> How often do you drink alcohol ? </td>
+		<td> <br> 
+		     <b> 0 </b> : no
+		     <br>
+		     <b> 1 </b> : Sometimes
+		     <br>
+		     <b> 2 </b> : Frequently
+                     <br>
+		     <b> 3 </b> : Always
+		</td>
+	</tr>
+	<tr>
+		<td> <br> - MTRANS </td>
+		<td> <br> Which transportation do you usually use ? </td>
+		<td> <br> 
+		     <b> 0 </b> : Public transportation
+		     <br>
+		     <b> 1 </b> : Automobile
+		     <br>
+		     <b> 2 </b> : Walking
+                     <br>
+		     <b> 3 </b> : Motorbike
+		     <br>
+		     <b> 4 </b> : Bike
+		</td>
+	</tr>
+	
+	</table>	
+	
+	<br>
+	<br>
+	<br>
+
+ </div>
+
+</body>
+</html>
