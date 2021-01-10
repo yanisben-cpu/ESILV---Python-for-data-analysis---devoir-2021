@@ -5,7 +5,14 @@ Python for data analysis project made by Yanis BENABDESSLAM
 This project consists in the deployment of a Flask API using a Machine Learning model on an "Obesity level" dataset.
 
 ### Prerequisites
-You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for API) installed in order to run everything correctly.
+
+You must have the following libraries installed:
+  - Pandas
+  - Numpy
+  - Matplotlib
+  - Seaborn
+  - Scikit Learn
+  - Flask (for API)
 
 ### Project Structure
 This project has 5 major parts :
