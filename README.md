@@ -8,12 +8,12 @@ This is a project which consists in the deployment of a Flask API using a Machin
 You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for API) installed in order to run everything correctly.
 
 ### Project Structure
-This project has four major parts :
+This project has 5 major parts :
 1. Proj python Yanis Benabdesslam.ipynb - This contains code fot our Machine Learning model to predict employee salaries absed on trainign data in 'hiring.csv' file.
 2. app_test.py - This contains Flask APIs that receives someones's physical features (Gender, height, etc.), computes the precited value based on our model and returns it.
 3. request.py - This uses requests module to call APIs already defined in app.py and dispalys the returned value.
 4. app.py - This also contains a Flask API that computes the precited value based on our model and returns it in an explorer.
-4. templates/index.html - This folder contains the HTML page on which the user will enter the values he wants for model's prediction.
+5. templates/index.html - This folder contains the HTML page on which the user will enter the values he wants for model's prediction.
 
 ### Running the project
 1. First, open the Jupyter Notebook file and run every row, in order to create the "converted dataset" and the model's pickle file.
