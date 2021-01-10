@@ -1,8 +1,8 @@
-# ESILV---Python-for-data-analysis---devoir-2021
+# ESILV - Python-for-data-analysis - devoir-2021
 Python for data analysis project made by Yanis BENABDESSLAM
 
-## ML-Model-Flask-Deployment
-This is a project which consists in the deployment of a Flask API using a Machine Learning model on an "Obesity level" dataset.
+## Project's goal
+This project consists in the deployment of a Flask API using a Machine Learning model on an "Obesity level" dataset.
 
 ### Prerequisites
 You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for API) installed in order to run everything correctly.
@@ -36,3 +36,13 @@ Run the beow command to run the console version off the app, with no html page s
 python app_test.py
 ```
 Then run the request.py file and lauch the program to see the result in python console.
+
+### Visuals
+All the vizuals can be found in the Jupyter Notebook file called "Proj Python Yanis Benabdesslam.ipynb".
+
+### Model
+The model is in the pickle file named "my_preds.pickle" : you can generate it again by launching the jupyter notebook file.
+The notebook also attests of all the models that I have tested in this project.
+
+### Conclusion
+
