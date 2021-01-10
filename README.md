@@ -28,7 +28,7 @@ This project has 5 major parts :
 - The "pickle files" folder contains the 3 python .py files (for Flask API)and the best model's pickle file.
 - The "templates" folder contains the "index.html" file used to show the API in an internet explorer
 
-### Running the project
+### How to run the project
 1. First, open the Jupyter Notebook file and run every row, in order to create the "converted dataset" and the model's pickle file.
 
 2. Run app.py using below command to start Flask API
